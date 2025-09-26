@@ -7,12 +7,12 @@ function Skills() {
   const skills = [
     {
       name: "HTML/CSS",
-      color: "emerald",
+      color: "orange",
       certificates: ["/certificates/html-css.png"]
     },
     {
       name: "Javascript", 
-      color: "cyan",
+      color: "yellow",
       certificates: ["/certificates/js.png", "/certificates/js2.png"]
     },
     {
@@ -27,7 +27,7 @@ function Skills() {
     },
     {
       name: "Banco de Dados",
-      color: "purple",
+      color: "blue",
       certificates: ["/certificates/db.png", "/certificates/sql.png"]
     },
     {
@@ -54,11 +54,11 @@ function Skills() {
           <h2 className="text-2xl font-bold text-emerald-400 mb-4">Skills</h2>          
           
           <div className="flex justify-center gap-4">
-            <FaHtml5 className="text-emerald-400 text-2xl group-hover:scale-110 transition-transform" />
-            <FaJs className="text-cyan-400 text-2xl group-hover:scale-110 transition-transform" />
-            <FaReact className="text-blue-400 text-2xl group-hover:scale-110 transition-transform" />
-            <FaNodeJs className="text-green-400 text-2xl group-hover:scale-110 transition-transform" />
-            <FaDatabase className="text-purple-400 text-2xl group-hover:scale-110 transition-transform" />
+            <FaHtml5 className="text-orange-500 text-2xl group-hover:scale-110 transition-transform" />
+            <FaJs className="text-yellow-500 text-2xl group-hover:scale-110 transition-transform" />
+            <FaReact className="text-blue-600 text-2xl group-hover:scale-110 transition-transform" />
+            <FaNodeJs className="text-green-600 text-2xl group-hover:scale-110 transition-transform" />
+            <FaDatabase className="text-blue-800 text-2xl group-hover:scale-110 transition-transform" />
             <FaGitAlt className="text-orange-400 text-2xl group-hover:scale-110 transition-transform" />
           </div>
           

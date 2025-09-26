@@ -133,12 +133,12 @@ function Projects() {
           
           {/* Ícones dos tipos de projeto */}
           <div className="flex justify-center gap-4">
-            <FaLaptopCode className="text-blue-400 text-2xl group-hover:scale-110 transition-transform" />
-            <FaMobile className="text-cyan-400 text-2xl group-hover:scale-110 transition-transform" />
-            <FaDatabase className="text-purple-400 text-2xl group-hover:scale-110 transition-transform" />
-            <FaReact className="text-emerald-400 text-2xl group-hover:scale-110 transition-transform" />
-            <FaNodeJs className="text-green-400 text-2xl group-hover:scale-110 transition-transform" />
             <FaJs className="text-yellow-400 text-2xl group-hover:scale-110 transition-transform" />
+            <FaLaptopCode className="text-white text-2xl group-hover:scale-110 transition-transform" />
+            <FaReact className="text-blue-600 text-2xl group-hover:scale-110 transition-transform" />
+            <FaNodeJs className="text-green-600 text-2xl group-hover:scale-110 transition-transform" />
+            <FaDatabase className="text-blue-800 text-2xl group-hover:scale-110 transition-transform" />
+            <FaMobile className="text-gray-600 text-2xl group-hover:scale-110 transition-transform" />
           </div>
           
           <p className="text-gray-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
