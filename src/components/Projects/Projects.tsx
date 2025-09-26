@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import {
   FaGithub,
   FaExternalLinkAlt,
@@ -7,9 +7,9 @@ import {
   FaJs,
   FaHtml5,
   FaLaptopCode,
-  FaMobile,
-  FaDatabase
+  FaDatabase,
 } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
 
 function Projects() {
   const [isOpen, setIsOpen] = useState(false);
@@ -89,6 +89,18 @@ function Projects() {
     },
     {
       id: 7,
+      title: "Dev Store",
+      description:
+        "E-commerce moderno para desenvolvedores com carrinho, produtos e sistema de pagamento",
+      image: "/images/dev-store.png",
+      demoUrl: null, // Ajuste quando tiver deploy
+      githubUrl: "https://github.com/adriano-rocha", // Ajuste o link correto
+      technologies: ["Next.js", "React", "TypeScript"],
+      status: "Em desenvolvimento",
+      color: "indigo",
+    },
+    {
+      id: 8,
       title: "Auto Brilho",
       description:
         "Site para loja de higienização automotiva (em desenvolvimento)",
@@ -110,6 +122,8 @@ function Projects() {
       React: <FaReact className="text-blue-400" />,
       "Node.js": <FaNodeJs className="text-emerald-400" />,
       JavaScript: <FaJs className="text-yellow-400" />,
+      "Next.js": <span className="text-white">⚡</span>,
+      TypeScript: <span className="text-blue-400">TS</span>,
       HTML: <FaHtml5 className="text-orange-400" />,
       CSS: <span className="text-blue-300">CSS</span>,
       Database: <span className="text-purple-400">DB</span>,
@@ -130,17 +144,16 @@ function Projects() {
           className="bg-gray-800 hover:bg-emerald-400/20 border-2 border-emerald-400 px-12 py-6 rounded-lg transition-all duration-300 hover:scale-105 group"
         >
           <h2 className="text-2xl font-bold text-emerald-400 mb-4">Projetos</h2>
-          
-          {/* Ícones dos tipos de projeto */}
+
           <div className="flex justify-center gap-4">
             <FaJs className="text-yellow-400 text-2xl group-hover:scale-110 transition-transform" />
-            <FaLaptopCode className="text-white text-2xl group-hover:scale-110 transition-transform" />
-            <FaReact className="text-blue-600 text-2xl group-hover:scale-110 transition-transform" />
-            <FaNodeJs className="text-green-600 text-2xl group-hover:scale-110 transition-transform" />
-            <FaDatabase className="text-blue-800 text-2xl group-hover:scale-110 transition-transform" />
-            <FaMobile className="text-gray-600 text-2xl group-hover:scale-110 transition-transform" />
+            <FaReact className="text-blue-700 text-2xl group-hover:scale-110 transition-transform" />
+            <FaNodeJs className="text-green-400 text-2xl group-hover:scale-110 transition-transform" />
+            <SiNextdotjs className="text-white text-2xl group-hover:scale-110 transition-transform" />
+            <FaDatabase className="text-blue-900 text-2xl group-hover:scale-110 transition-transform" />
+            <FaLaptopCode className="text-gray-600 text-2xl group-hover:scale-110 transition-transform" />
           </div>
-          
+
           <p className="text-gray-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
             Clique para ver meus projetos
           </p>
