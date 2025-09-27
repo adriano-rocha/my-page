@@ -8,25 +8,33 @@ function Home() {
     >
       <div className="flex-1 text-center lg:text-left order-2 lg:order-1">
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">
-          Olá, Sou <span className="text-gray-400">Adriano Rocha</span>
+          Olá, Sou <span className="text-gray-300">Adriano Rocha</span>
         </h1>
         <p className="text-emerald-400 text-lg sm:text-xl mb-2">
           Analista e Desenvolvedor de Sistemas para Web.
         </p>
         <p className="text-gray-100 mb-8 max-w-md mx-auto lg:mx-0">
-          <i>
+          <strong>
             Desenvolvimento que resolve problemas e garante o crescimento do seu
             negócio. Eu planejo, crio e entrego sistemas e sites completos que
             funcionam perfeitamente do conceito à implementação final. Sua ideia
             ganha vida com uma base técnica robusta, segura e fácil de usar.
-          </i>
+          </strong>
         </p>
 
-        <div className="mt-8 lg:mt-12 flex items-center justify-center lg:justify-start gap-3">
+        <div className="mt-8 lg:mt-12 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+          <a
+            href="https://wa.me/5582998273188"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-emerald-400 hover:bg-emerald-600 text-gray-900 px-6 sm:px-8 py-3 rounded-full font-semibold transition-colors inline-block text-center w-full sm:w-auto"
+          >
+            Fale Comigo Agora
+          </a>
           <a
             href="/certificates/cv-adriano-rocha.pdf"
             download="CV-Adriano-Rocha.pdf"
-            className="bg-gray-900 hover:bg-emerald-400 px-6 sm:px-8 py-3 rounded-full font-medium transition-colors inline-block"
+            className="bg-gray-900 hover:bg-gray-700 text-white border border-gray-600 px-6 sm:px-8 py-3 rounded-full font-medium transition-colors inline-block text-center w-full sm:w-auto"
           >
             Download CV
           </a>

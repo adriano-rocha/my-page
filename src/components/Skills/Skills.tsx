@@ -37,6 +37,41 @@ function Skills() {
     }
   ];
 
+    const getSkillStyles = (color: string) => {
+    switch (color) {
+      case 'orange':
+        return {
+          border: 'border-orange-400',
+          text: 'text-orange-400',
+          hover: 'hover:bg-orange-400/10'
+        };
+      case 'yellow':
+        return {
+          border: 'border-yellow-400',
+          text: 'text-yellow-400',
+          hover: 'hover:bg-yellow-400/10'
+        };
+      case 'blue':
+        return {
+          border: 'border-blue-400',
+          text: 'text-blue-400',
+          hover: 'hover:bg-blue-400/10'
+        };
+      case 'green':
+        return {
+          border: 'border-green-400',
+          text: 'text-green-400',
+          hover: 'hover:bg-green-400/10'
+        };
+      default:
+        return {
+          border: 'border-gray-400',
+          text: 'text-gray-400',
+          hover: 'hover:bg-gray-400/10'
+        };
+    }
+  };
+
   const handleCertificateClick = (certificateUrl: string) => {
     window.open(certificateUrl, '_blank');
   };
@@ -51,7 +86,8 @@ function Skills() {
           onClick={() => setIsOpen(true)}
           className="bg-gray-800 hover:bg-emerald-400/20 border-2 border-emerald-400 px-12 py-6 rounded-lg transition-all duration-300 hover:scale-105 group"
         >
-          <h2 className="text-2xl font-bold text-emerald-400 mb-4">Skills</h2>          
+          <h2 className="text-2xl font-bold text-emerald-400 mb-2">Skills</h2>
+          <p className="text-gray-300 text-sm mb-4">Tecnologias de Mercado. Competência</p>
           
           <div className="flex justify-center gap-4">
             <FaHtml5 className="text-orange-500 text-2xl group-hover:scale-110 transition-transform" />
@@ -62,7 +98,7 @@ function Skills() {
             <FaGitAlt className="text-orange-400 text-2xl group-hover:scale-110 transition-transform" />
           </div>
           
-          <p className="text-gray-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-gray-500 text-sm mt-3 group-hover:opacity-100 transition-opacity">
             Clique para ver certificados
           </p>
         </button>
@@ -87,44 +123,47 @@ function Skills() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-        {skills.map((skill, skillIndex) => (
-          <div 
-            key={skillIndex}
-            className={`bg-gray-800 border-2 border-${skill.color}-400 rounded-lg overflow-hidden hover:bg-${skill.color}-400/10 transition-all duration-300 hover:scale-105 group`}
-          >
-            <div className="p-6 text-center">
-              <h3 className={`text-xl font-semibold text-${skill.color}-400 mb-4`}>
-                {skill.name}
-              </h3>              
-              
-              <div className="grid grid-cols-1 gap-3">
-                {skill.certificates.map((certificate, certIndex) => (
-                  <div
-                    key={certIndex}
-                    onClick={() => handleCertificateClick(certificate)}
-                    className="relative cursor-pointer group/cert"
-                  >
-                    <img
-                      src={certificate}
-                      alt={`${skill.name} Certificate ${certIndex + 1}`}
-                      className="w-full h-32 object-cover rounded border-2 border-gray-600 hover:border-white transition-colors"
-                    />
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover/cert:opacity-100 transition-opacity rounded flex items-center justify-center">
-                      <span className="text-white text-sm font-medium">Ver certificado</span>
+        {skills.map((skill, skillIndex) => {
+          const styles = getSkillStyles(skill.color);
+          return (
+            <div 
+              key={skillIndex}
+              className={`bg-gray-800 border-2 ${styles.border} rounded-lg overflow-hidden ${styles.hover} transition-all duration-300 hover:scale-105 group`}
+            >
+              <div className="p-6 text-center">
+                <h3 className={`text-xl font-semibold ${styles.text} mb-4`}>
+                  {skill.name}
+                </h3>              
+                
+                <div className="grid grid-cols-1 gap-3">
+                  {skill.certificates.map((certificate, certIndex) => (
+                    <div
+                      key={certIndex}
+                      onClick={() => handleCertificateClick(certificate)}
+                      className="relative cursor-pointer group/cert"
+                    >
+                      <img
+                        src={certificate}
+                        alt={`${skill.name} Certificate ${certIndex + 1}`}
+                        className="w-full h-32 object-cover rounded border-2 border-gray-600 hover:border-white transition-colors"
+                      />
+                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover/cert:opacity-100 transition-opacity rounded flex items-center justify-center">
+                        <span className="text-white text-sm font-medium">Ver certificado</span>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+                
+                <p className="text-xs text-gray-400 mt-3">
+                  {skill.certificates.length === 1 
+                    ? '1 certificado'
+                    : `${skill.certificates.length} certificados`
+                  }
+                </p>
               </div>
-              
-              <p className="text-xs text-gray-400 mt-3">
-                {skill.certificates.length === 1 
-                  ? '1 certificado'
-                  : `${skill.certificates.length} certificados`
-                }
-              </p>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

@@ -7,109 +7,109 @@ import {
   FaJs,
   FaHtml5,
   FaLaptopCode,
-  FaDatabase,
+  FaDatabase, 
 } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
+import { SiNextdotjs, SiMongodb, SiPostgresql, SiExpress } from "react-icons/si"; 
 
 function Projects() {
   const [isOpen, setIsOpen] = useState(false);
 
   const projects = [
     {
-      id: 1,
-      title: "TaskFlow - Landing Page",
+      id: 1, 
+      title: "Quiroclínica (Site Institucional)",
       description:
-        "Página interativa para app de produtividade com design moderno e responsivo",
-      image: "/images/taskflow-preview.png",
-      demoUrl: "https://interactive-page-brown.vercel.app/",
-      githubUrl: "https://github.com/adriano-rocha/interactive-page",
-      technologies: ["HTML", "CSS", "JavaScript"],
+        "Site institucional de **alta conversão** com design profissional e responsivo, focado em credibilidade e geração de agendamentos.", 
+      image: "/images/quiroclinica-preview.png",
+      demoUrl: "https://site-quiroclinica.vercel.app/",
+      githubUrl: "https://github.com/adriano-rocha/site-quiroclinica",
+      technologies: ["React", "CSS", "Responsive"], // ALTERADO: Removido Tailwind
       status: "Finalizado",
-      color: "yellow",
+      color: "white", 
     },
     {
-      id: 2,
-      title: "To-Do List App",
+      id: 2, 
+      title: "CRUD Fullstack (Gestão de Dados)",
       description:
-        "Aplicação de lista de tarefas com interface intuitiva e funcionalidades completas",
-      image: "/images/todo-preview.png",
-      demoUrl: "https://to-do-ochre-xi.vercel.app",
-      githubUrl: "https://github.com/adriano-rocha/to-do",
-      technologies: ["React", "JavaScript", "CSS"],
-      status: "Finalizado",
-      color: "white",
-    },
-    {
-      id: 3,
-      title: "CRUD Fullstack",
-      description:
-        "Sistema completo de cadastro com backend e frontend integrados",
+        "Solução completa de gestão de dados com API e interface integradas. Demonstração de arquitetura **Node.js/Express** e persistência em **MongoDB**.", 
       image: "/images/crud-preview.png",
       demoUrl: "https://crud-fullstack-ivory.vercel.app",
       githubUrl: "https://github.com/adriano-rocha/crud-fullstack",
-      technologies: ["React", "Node.js", "Database", "Responsive"],
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Responsive"],
       status: "Finalizado",
-      color: "emerald",
+      color: "yellow", 
+    },
+    {
+      id: 3, 
+      title: "Dev Store (E-commerce Moderno)",
+      description:
+        "E-commerce moderno para demonstração de arquitetura escalável com **Next.js/TypeScript**, gerenciamento de estado e carrinho de compras.", 
+      image: "/images/dev-store.png",
+      demoUrl: "https://dev-store-link.vercel.app/", 
+      githubUrl: "https://github.com/adriano-rocha/dev-store",
+      technologies: ["Next.js", "React", "TypeScript", "Responsive"],
+      status: "Em desenvolvimento",
+      color: "blue", 
     },
     {
       id: 4,
       title: "Controle de Gastos",
       description:
-        "Aplicação para controle financeiro pessoal com dashboard interativo",
+        "Aplicação para controle financeiro pessoal com dashboard interativo em React, focada em usabilidade e design limpo.", 
       image: "/images/expense-preview.png",
       demoUrl: "https://expense-control-five.vercel.app",
       githubUrl: "https://github.com/adriano-rocha/expense-control",
       technologies: ["React", "JavaScript", "Responsive"],
       status: "Finalizado",
-      color: "blue",
+      color: "blue", 
     },
     {
-      id: 5,
-      title: "Quiroclínica",
-      description:
-        "Site institucional para clínica de quiropraxia com design profissional",
-      image: "/images/quiroclinica-preview.png",
-      demoUrl: "https://site-quiroclinica.vercel.app/",
-      githubUrl: "https://github.com/adriano-rocha/site-quiroclinica",
-      technologies: ["React", "CSS", "Responsive"],
-      status: "Finalizado",
-      color: "olive",
-    },
-    {
-      id: 6,
+      id: 5, 
       title: "New Gym",
       description:
-        "Site moderno para academia com design responsivo e animações (em desenvolvimento)",
+        "Site moderno para academia com design responsivo e animações, usando JavaScript vanilla para um código leve.",
       image: "/images/newgym-preview.png",
       demoUrl: "https://new-gym-three.vercel.app/",
       githubUrl: "https://github.com/adriano-rocha/new-gym",
       technologies: ["Javascript", "CSS"],
       status: "Em desenvolvimento",
-      color: "green",
+      color: "green", 
+    },
+    {
+      id: 6,
+      title: "TaskFlow - Landing Page",
+      description:
+        "Landing page interativa para app de produtividade. Foco em UX/UI, alta performance e responsividade em todos os dispositivos.", 
+      image: "/images/taskflow-preview.png",
+      demoUrl: "https://interactive-page-brown.vercel.app/",
+      githubUrl: "https://github.com/adriano-rocha/interactive-page",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      status: "Finalizado",
+      color: "yellow", 
     },
     {
       id: 7,
-      title: "Dev Store",
-      description:
-        "E-commerce moderno para desenvolvedores com carrinho, produtos e sistema de pagamento",
-      image: "/images/dev-store.png",
-      demoUrl: null, // Ajuste quando tiver deploy
-      githubUrl: "https://github.com/adriano-rocha", // Ajuste o link correto
-      technologies: ["Next.js", "React", "TypeScript"],
-      status: "Em desenvolvimento",
-      color: "indigo",
-    },
-    {
-      id: 8,
       title: "Auto Brilho",
       description:
-        "Site para loja de higienização automotiva (em desenvolvimento)",
+        "Site em React/Vite para loja de higienização automotiva. Em desenvolvimento, focado em velocidade de carregamento e SEO.",
       image: "/images/autobrilho-preview.png",
       demoUrl: null,
       githubUrl: "https://github.com/adriano-rocha/site-auto-brilho",
       technologies: ["React", "Vite", "Responsive"],
       status: "Em desenvolvimento",
-      color: "red",
+      color: "red", 
+    },
+    {
+      id: 8, 
+      title: "To-Do List App",
+      description:
+        "Aplicação de lista de tarefas em React. Demonstração de gerenciamento de estado e persistência de dados local.",
+      image: "/images/todo-preview.png",
+      demoUrl: "https://to-do-ochre-xi.vercel.app",
+      githubUrl: "https://github.com/adriano-rocha/to-do",
+      technologies: ["React", "JavaScript", "CSS"],
+      status: "Finalizado",
+      color: "white", // ALTERADO: Branco
     },
   ];
 
@@ -121,13 +121,16 @@ function Projects() {
     const icons: { [key: string]: React.ReactElement } = {
       React: <FaReact className="text-blue-400" />,
       "Node.js": <FaNodeJs className="text-emerald-400" />,
+      Express: <SiExpress className="text-emerald-500" />, 
+      MongoDB: <SiMongodb className="text-green-500" />, 
+      PostgreSQL: <SiPostgresql className="text-blue-600" />, 
       JavaScript: <FaJs className="text-yellow-400" />,
-      "Next.js": <span className="text-white">⚡</span>,
-      TypeScript: <span className="text-blue-400">TS</span>,
+      "Next.js": <SiNextdotjs className="text-white" />,
+      TypeScript: <span className="text-blue-400 font-bold">TS</span>,
+      "Tailwind CSS": <span className="text-cyan-400 font-bold">TW</span>, // Mantido, caso precise em outros projetos
       HTML: <FaHtml5 className="text-orange-400" />,
-      CSS: <span className="text-blue-300">CSS</span>,
-      Database: <span className="text-purple-400">DB</span>,
-      Vite: <span className="text-purple-400">⚡</span>,
+      CSS: <span className="text-blue-300 font-bold">CSS</span>,
+      Vite: <span className="text-purple-400 font-bold">VITE</span>,
       Responsive: <span className="text-cyan-400">📱</span>,
     };
     return icons[tech] || <span className="text-gray-400">{tech}</span>;
@@ -143,19 +146,23 @@ function Projects() {
           onClick={() => setIsOpen(true)}
           className="bg-gray-800 hover:bg-emerald-400/20 border-2 border-emerald-400 px-12 py-6 rounded-lg transition-all duration-300 hover:scale-105 group"
         >
-          <h2 className="text-2xl font-bold text-emerald-400 mb-4">Projetos</h2>
+          <h2 className="text-2xl font-bold text-emerald-400 mb-2">
+            Portfólio de Soluções
+          </h2> 
+          <p className="text-gray-300 text-sm mb-4">
+            Meus sistemas e aplicações que entregam valor.
+          </p>
 
           <div className="flex justify-center gap-4">
-            <FaJs className="text-yellow-400 text-2xl group-hover:scale-110 transition-transform" />
-            <FaReact className="text-blue-700 text-2xl group-hover:scale-110 transition-transform" />
-            <FaNodeJs className="text-green-400 text-2xl group-hover:scale-110 transition-transform" />
+            <FaReact className="text-blue-400 text-2xl group-hover:scale-110 transition-transform" />
             <SiNextdotjs className="text-white text-2xl group-hover:scale-110 transition-transform" />
-            <FaDatabase className="text-blue-900 text-2xl group-hover:scale-110 transition-transform" />
-            <FaLaptopCode className="text-gray-600 text-2xl group-hover:scale-110 transition-transform" />
+            <FaNodeJs className="text-green-400 text-2xl group-hover:scale-110 transition-transform" />
+            <FaDatabase className="text-purple-400 text-2xl group-hover:scale-110 transition-transform" />
+            <FaLaptopCode className="text-cyan-400 text-2xl group-hover:scale-110 transition-transform" />
           </div>
 
-          <p className="text-gray-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
-            Clique para ver meus projetos
+          <p className="text-gray-500 text-sm mt-3">
+            Clique para ver todos os projetos
           </p>
         </button>
       </section>
@@ -165,7 +172,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col items-center justify-center px-8 max-w-6xl mx-auto"
+      className="min-h-screen flex flex-col items-center justify-center px-8 max-w-6xl mx-auto py-16"
     >
       <div className="flex items-center justify-between w-full mb-12">
         <button
@@ -174,7 +181,7 @@ function Projects() {
         >
           ← Voltar
         </button>
-        <h2 className="text-3xl font-bold text-emerald-400">Meus Projetos</h2>
+        <h2 className="text-3xl font-bold text-emerald-400">Portfólio de Soluções</h2>
         <div></div>
       </div>
 
@@ -182,6 +189,7 @@ function Projects() {
         {projects.map((project) => (
           <div
             key={project.id}
+            
             className={`bg-gray-800 border-2 border-${project.color}-400 rounded-lg overflow-hidden hover:bg-${project.color}-400/10 transition-all duration-300 hover:scale-105 group`}
           >
             <div className="relative h-48 bg-gray-700 overflow-hidden">
@@ -270,7 +278,7 @@ function Projects() {
         >
           <FaGithub className="text-emerald-400" />
           <span className="text-emerald-400 font-medium">
-            Ver todos os projetos
+            Ver repositório completo
           </span>
         </a>
       </div>
