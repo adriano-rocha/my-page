@@ -19,11 +19,11 @@ function Projects() {
       id: 1, 
       title: "Quiroclínica (Site Institucional)",
       description:
-        "Site institucional de **alta conversão** com design profissional e responsivo, focado em credibilidade e geração de agendamentos.", 
+        "Site institucional de **alta conversão** com design profissional e responsivo, focado em credibilidade e geração de agendamentos. Inclui sistema de **internacionalização (i18n)** para múltiplos idiomas.", 
       image: "/images/quiroclinica-preview.png",
       demoUrl: "https://site-quiroclinica.vercel.app/",
       githubUrl: "https://github.com/adriano-rocha/site-quiroclinica",
-      technologies: ["React", "CSS", "Responsive"], // ALTERADO: Removido Tailwind
+      technologies: ["React", "CSS", "i18n", "Responsive"], 
       status: "Finalizado",
       color: "white", 
     },
@@ -71,7 +71,7 @@ function Projects() {
       image: "/images/newgym-preview.png",
       demoUrl: "https://new-gym-three.vercel.app/",
       githubUrl: "https://github.com/adriano-rocha/new-gym",
-      technologies: ["Javascript", "CSS"],
+      technologies: ["React", "CSS", "Responsive"],
       status: "Em desenvolvimento",
       color: "green", 
     },
@@ -109,7 +109,7 @@ function Projects() {
       githubUrl: "https://github.com/adriano-rocha/to-do",
       technologies: ["React", "JavaScript", "CSS"],
       status: "Finalizado",
-      color: "white", // ALTERADO: Branco
+      color: "white", 
     },
   ];
 
@@ -127,9 +127,10 @@ function Projects() {
       JavaScript: <FaJs className="text-yellow-400" />,
       "Next.js": <SiNextdotjs className="text-white" />,
       TypeScript: <span className="text-blue-400 font-bold">TS</span>,
-      "Tailwind CSS": <span className="text-cyan-400 font-bold">TW</span>, // Mantido, caso precise em outros projetos
+      "Tailwind CSS": <span className="text-cyan-400 font-bold">TW</span>, 
       HTML: <FaHtml5 className="text-orange-400" />,
       CSS: <span className="text-blue-300 font-bold">CSS</span>,
+      i18n: <span className="text-green-400 font-bold">🌐</span>,
       Vite: <span className="text-purple-400 font-bold">VITE</span>,
       Responsive: <span className="text-cyan-400">📱</span>,
     };
@@ -247,7 +248,7 @@ function Projects() {
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex-1 bg-${project.color}-400 hover:bg-${project.color}-500 text-gray-900 px-3 py-2 rounded text-sm font-medium transition-colors flex items-center justify-center gap-2`}
+                    className={`flex-1 bg-${project.color}-400 hover:bg-${project.color}-500 text-gray-400 px-3 py-2 rounded text-sm font-medium transition-colors flex items-center justify-center gap-2`}
                   >
                     <FaExternalLinkAlt className="text-xs" />
                     Demo
