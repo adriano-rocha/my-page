@@ -1,6 +1,29 @@
+import { useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 function Contact() {
+  const [copied, setCopied] = useState(false);
+  const emailAddress = "adrianorocha.dev@gmail.com";
+
+  // Função para copiar o e-mail para a área de transferência
+  const handleCopyEmail = () => {
+    // Verifica se a API de cópia está disponível
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(emailAddress);
+      setCopied(true);
+
+      // Reseta o status 'Copiado' após 2 segundos
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+    } else {
+      // Fallback para navegadores antigos (opcional: usar a tag <a> mailto: )
+      alert(
+        `Seu navegador não suporta a cópia direta. Por favor, utilize o endereço: ${emailAddress}`
+      );
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -21,6 +44,7 @@ function Contact() {
         </p>
 
         <div className="flex items-center justify-center gap-8">
+          {/* Botão WhatsApp */}
           <a
             href="https://wa.me/5582998273188"
             target="_blank"
@@ -29,6 +53,8 @@ function Contact() {
           >
             <FaWhatsapp className="text-green-400 text-2xl group-hover:text-green-300 transition-colors duration-300" />
           </a>
+
+          {/* Botão GitHub */}
           <a
             href="https://github.com/adriano-rocha"
             target="_blank"
@@ -38,6 +64,7 @@ function Contact() {
             <FaGithub className="text-gray-400 text-2xl group-hover:text-white transition-colors duration-300" />
           </a>
 
+          {/* Botão LinkedIn */}
           <a
             href="https://www.linkedin.com/in/adriano-rocha-464044305/"
             target="_blank"
@@ -47,12 +74,21 @@ function Contact() {
             <FaLinkedin className="text-blue-400 text-2xl group-hover:text-blue-300 transition-colors duration-300" />
           </a>
 
-          <a
-            href="mailto:adrianorocha.dev@gmail.com"
-            className="bg-gray-800 border-2 border-red-400 p-4 rounded-full shadow-lg shadow-red-400/50 hover:shadow-red-400/80 hover:scale-110 hover:bg-red-400/10 transition-all duration-300 cursor-pointer group"
+          {/* Botão Email (Novo: Copiar para Área de Transferência) */}
+          <button
+            onClick={handleCopyEmail}
+            title={copied ? "E-mail Copiado!" : "Copiar E-mail"}
+            className="bg-gray-800 border-2 border-red-400 p-4 rounded-full shadow-lg shadow-red-400/50 hover:shadow-red-400/80 hover:scale-110 transition-all duration-300 cursor-pointer group relative"
           >
             <FaEnvelope className="text-red-400 text-2xl group-hover:text-red-300 transition-colors duration-300" />
-          </a>
+
+            {/* Tooltip de confirmação */}
+            {copied && (
+              <span className="absolute top-1/2 left-full ml-3 px-3 py-1 bg-gray-900 text-white text-xs rounded-full whitespace-nowrap shadow-md transform -translate-y-1/2">
+                Copiado!
+              </span>
+            )}
+          </button>
         </div>
       </div>
     </section>
